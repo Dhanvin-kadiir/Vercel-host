@@ -1,0 +1,149 @@
+{
+  "personal": {
+    "name": "Dhanvin Kadiir S",
+    "tagline": "Cybersecurity & Networking Enthusiast",
+    "bio": "B.Tech CSBS student passionate about cybersecurity, networking, and building secure systems. Experienced in network infrastructure, malware analysis concepts, and modern tools like Docker and n8n.",
+    "email": "dhanvinkadiirs@gmail.com",
+    "phone": "+91 7397643343",
+    "location": "4/475/9 Dhanasekaran Nagar, 2nd Street, Tuticorin - 628002",
+    "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=400&h=400"
+  },
+  "social": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/DhanvinKadiirS",
+      "icon": "github"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/in/dhanvinkadiirs",
+      "icon": "linkedin"
+    },
+    {
+      "name": "Portfolio",
+      "url": "https://dhanvin-kadiirs.vercel.app/",
+      "icon": "twitter"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Network Infrastructure",
+      "level": 90,
+      "category": "Cybersecurity & Networking"
+    },
+    {
+      "name": "Malware Analysis Concepts",
+      "level": 85,
+      "category": "Cybersecurity & Networking"
+    },
+    {
+      "name": "Telecommunications Basics",
+      "level": 88,
+      "category": "Cybersecurity & Networking"
+    },
+    {
+      "name": "Cybersecurity Fundamentals",
+      "level": 92,
+      "category": "Cybersecurity & Networking"
+    },
+    {
+      "name": "Docker",
+      "level": 80,
+      "category": "Tools & Platforms"
+    },
+    {
+      "name": "n8n Automation",
+      "level": 85,
+      "category": "Tools & Platforms"
+    },
+    {
+      "name": "Linux OS",
+      "level": 85,
+      "category": "Tools & Platforms"
+    },
+    {
+      "name": "Windows OS",
+      "level": 95,
+      "category": "Tools & Platforms"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "title": "Network Intrusion Detection System (IDS)",
+      "description": "Analyzed live network traffic and packet data to identify malicious activities, detect potential intrusions, and understand threat behaviors on a network.",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=600",
+      "tags": [
+        "Packet Analysis",
+        "Networking Protocols"
+      ],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "featured": true
+    },
+    {
+      "id": "2",
+      "title": "Optical Fiber Fault Detection",
+      "description": "Investigated network failures by detecting downtime locations and connection faults within optical fiber cables to ensure network reliability.",
+      "image": "https://images.unsplash.com/photo-1517055743450-4ba3a0972b9d?auto=format&fit=crop&q=80&w=600",
+      "tags": [
+        "Fiber Optics",
+        "Networking"
+      ],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "featured": true
+    },
+    {
+      "id": "3",
+      "title": "Malware Reverse Engineering & Cyber Attribution",
+      "description": "Currently reverse-engineering malware samples to analyze their core mechanics, map threat behaviors, and understand the origins of cyber attacks.",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=600",
+      "tags": [
+        "Malware Analysis",
+        "OS Internals",
+        "Ongoing"
+      ],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "featured": true
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": "1",
+      "title": "Securing Web Applications Against Modern Threats",
+      "excerpt": "A deep dive into advanced security headers and how to protect applications from XSS, clickjacking, and other common attacks.",
+      "content": "Full blog content goes here...",
+      "date": "2024-03-01",
+      "tags": [
+        "Cybersecurity",
+        "Web Security",
+        "Headers"
+      ],
+      "featured": true
+    }
+  ],
+  "experience": [
+    {
+      "company": "BSNL - Rajiv Gandhi Memorial Telecom Training Centre",
+      "position": "Telecommunication & Data Networking Intern",
+      "duration": "June 2025 - June 2025",
+      "description": "Completed a 15-day industrial training program. Gained exposure to real-world network operations at a major government facility. Observed practical networking principles, building a foundation for cybersecurity defense."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Rajalakshmi Engineering College, Chennai",
+      "degree": "B.Tech CSBS (Computer Science & Business Systems)",
+      "year": "2023 - 2027",
+      "description": "GPA: 7.22. Focus on computer science, networking, and business systems."
+    },
+    {
+      "institution": "1st Position - CodeCraft'24 National Level Hackathon",
+      "degree": "Award / Achievement",
+      "year": "September 2024",
+      "description": "Secured 1st position in the Web Development domain during a 2-day national-level hackathon. (Sri Sairam Engineering College)"
+    }
+  ]
+}
