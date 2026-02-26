@@ -7,8 +7,8 @@ const Skills: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   const categories = ['all', ...Array.from(new Set(skills.map(skill => skill.category)))];
-  const filteredSkills = selectedCategory === 'all' 
-    ? skills 
+  const filteredSkills = selectedCategory === 'all'
+    ? skills
     : skills.filter(skill => skill.category === selectedCategory);
 
   const getCategoryIcon = (category: string) => {
@@ -48,11 +48,10 @@ const Skills: React.FC = () => {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-3 rounded-full font-medium transition-colors ${
-                selectedCategory === category
+              className={`px-6 py-3 rounded-full font-medium transition-colors ${selectedCategory === category
                   ? 'bg-blue-600 text-white'
                   : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-gray-600'
-              }`}
+                }`}
             >
               {category === 'all' ? 'All Skills' : category}
             </button>
@@ -79,7 +78,7 @@ const Skills: React.FC = () => {
                   {skill.level}%
                 </span>
               </div>
-              
+
               <div className="mb-3">
                 <div className="bg-gray-200 dark:bg-gray-700 rounded-full h-3">
                   <div
@@ -88,7 +87,7 @@ const Skills: React.FC = () => {
                   ></div>
                 </div>
               </div>
-              
+
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 {skill.category}
               </p>
@@ -107,7 +106,7 @@ const Skills: React.FC = () => {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold">{skills.length}+</div>
+                <div className="text-3xl font-bold">8+</div>
                 <div className="text-blue-100">Technologies</div>
               </div>
               <div className="text-center">

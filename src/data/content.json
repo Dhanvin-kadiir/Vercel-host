@@ -122,6 +122,46 @@
         "Headers"
       ],
       "featured": true
+    },
+    {
+      "id": "2",
+      "title": "The Rise of Generative AI in Cybersecurity",
+      "excerpt": "Exploring how Large Language Models (LLMs) are transforming both offensive cyber operations and defensive security automation strategies.",
+      "content": "Full blog content goes here...",
+      "date": "2026-02-20",
+      "tags": [
+        "Generative AI",
+        "Cybersecurity",
+        "LLMs",
+        "Automation"
+      ],
+      "featured": true
+    },
+    {
+      "id": "3",
+      "title": "Implementing Zero Trust Architecture",
+      "excerpt": "Why perimeter security is no longer enough and how organizations are shifting towards Zero Trust frameworks to mitigate expanding attack surfaces.",
+      "content": "Full blog content goes here...",
+      "date": "2026-01-15",
+      "tags": [
+        "Architecture",
+        "Zero Trust",
+        "Network Security"
+      ],
+      "featured": false
+    },
+    {
+      "id": "4",
+      "title": "Quantum Computing: The Cryptography Threat horizon",
+      "excerpt": "Analyzing the impending risks that quantum computers pose to modern public-key cryptography and the push for post-quantum resistant algorithms.",
+      "content": "Full blog content goes here...",
+      "date": "2025-11-10",
+      "tags": [
+        "Quantum Computing",
+        "Cryptography",
+        "Future Tech"
+      ],
+      "featured": false
     }
   ],
   "experience": [
