@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Globe, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import content from '../data/content.json';
 
 const Contact: React.FC = () => {
@@ -12,6 +12,9 @@ const Contact: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
+
+  const sanitize = (str: string) => str.replace(/<[^>]*>/g, '').trim();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -23,12 +26,11 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+    setSubmitError(false);
+
     try {
-      // Build a database automation integration
-      // E.g., This can be your n8n Webhook, Supabase function, or Formspree
       const webhookUrl = import.meta.env.VITE_CONTACT_WEBHOOK_URL || 'https://hook.us1.make.com/your-webhook-id-here';
-      
+
       const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: {
@@ -36,26 +38,26 @@ const Contact: React.FC = () => {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          ...formData,
+          name: sanitize(formData.name),
+          email: sanitize(formData.email),
+          subject: sanitize(formData.subject),
+          message: sanitize(formData.message),
           dateAdded: new Date().toISOString(),
           systemPath: 'portfolio/contact'
         })
       });
 
-      console.log("Database Automation Links / Upload Status:", response.status);
+      if (!response.ok) throw new Error('Request failed');
 
       setIsSubmitting(false);
       setIsSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setIsSubmitted(false), 5000);
-      
-    } catch (error) {
-       console.error("Automation DB Submission Error details:", error);
-       // We still show success in UI even if demo backend fails for continuous seamless UX
-       setIsSubmitting(false);
-       setIsSubmitted(true);
-       setFormData({ name: '', email: '', subject: '', message: '' });
-       setTimeout(() => setIsSubmitted(false), 5000);
+
+    } catch {
+      setIsSubmitting(false);
+      setSubmitError(true);
+      setTimeout(() => setSubmitError(false), 5000);
     }
   };
 
@@ -63,7 +65,7 @@ const Contact: React.FC = () => {
     switch (iconName) {
       case 'github': return Github;
       case 'linkedin': return Linkedin;
-      case 'twitter': return Twitter;
+      case 'globe': return Globe;
       default: return Mail;
     }
   };
@@ -86,7 +88,7 @@ const Contact: React.FC = () => {
           <div className="lg:col-span-1">
             <div className="bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-2xl p-8">
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-              
+
               <div className="space-y-6">
                 <div className="flex items-center">
                   <Mail className="mr-4" size={24} />
@@ -97,7 +99,7 @@ const Contact: React.FC = () => {
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center">
                   <Phone className="mr-4" size={24} />
                   <div>
@@ -107,7 +109,7 @@ const Contact: React.FC = () => {
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center">
                   <MapPin className="mr-4" size={24} />
                   <div>
@@ -116,7 +118,7 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="mt-8 pt-8 border-t border-blue-400">
                 <h3 className="text-lg font-semibold mb-4">Follow Me</h3>
                 <div className="flex space-x-4">
@@ -158,7 +160,7 @@ const Contact: React.FC = () => {
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                     Send Me a Message
                   </h2>
-                  
+
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
@@ -176,7 +178,7 @@ const Contact: React.FC = () => {
                           placeholder="Enter your name"
                         />
                       </div>
-                      
+
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                           Email Address *
@@ -193,7 +195,7 @@ const Contact: React.FC = () => {
                         />
                       </div>
                     </div>
-                    
+
                     <div>
                       <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Subject *
@@ -209,7 +211,7 @@ const Contact: React.FC = () => {
                         placeholder="What's this about?"
                       />
                     </div>
-                    
+
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Message *
@@ -225,7 +227,7 @@ const Contact: React.FC = () => {
                         placeholder="Tell me more about your project or inquiry..."
                       />
                     </div>
-                    
+
                     <button
                       type="submit"
                       disabled={isSubmitting}
@@ -243,6 +245,13 @@ const Contact: React.FC = () => {
                         </>
                       )}
                     </button>
+
+                    {submitError && (
+                      <div className="flex items-center gap-2 text-red-600 dark:text-red-400 mt-4">
+                        <AlertCircle size={20} />
+                        <span>Failed to send message. Please try again or email directly.</span>
+                      </div>
+                    )}
                   </form>
                 </>
               )}

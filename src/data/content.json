@@ -22,7 +22,7 @@
     {
       "name": "Portfolio",
       "url": "https://dhanvin-kadiirs.vercel.app/",
-      "icon": "twitter"
+      "icon": "globe"
     }
   ],
   "skills": [
@@ -77,21 +77,21 @@
         "Packet Analysis",
         "Networking Protocols"
       ],
-      "liveUrl": "#",
-      "githubUrl": "#",
+      "liveUrl": "",
+      "githubUrl": "",
       "featured": true
     },
     {
       "id": "2",
       "title": "Optical Fiber Fault Detection",
       "description": "Investigated network failures by detecting downtime locations and connection faults within optical fiber cables to ensure network reliability.",
-      "image": "https://images.unsplash.com/photo-1517055743450-4ba3a0972b9d?auto=format&fit=crop&q=80&w=600",
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=600",
       "tags": [
         "Fiber Optics",
         "Networking"
       ],
-      "liveUrl": "#",
-      "githubUrl": "#",
+      "liveUrl": "",
+      "githubUrl": "",
       "featured": true
     },
     {
@@ -104,8 +104,8 @@
         "OS Internals",
         "Ongoing"
       ],
-      "liveUrl": "#",
-      "githubUrl": "#",
+      "liveUrl": "",
+      "githubUrl": "",
       "featured": true
     }
   ],

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Globe } from 'lucide-react';
 import content from '../data/content.json';
 
 const Footer: React.FC = () => {
@@ -9,6 +9,7 @@ const Footer: React.FC = () => {
     switch (iconName) {
       case 'github': return Github;
       case 'linkedin': return Linkedin;
+      case 'globe': return Globe;
       default: return Mail;
     }
   };

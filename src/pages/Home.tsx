@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Download, Github, Linkedin, Mail, Globe } from 'lucide-react';
 import content from '../data/content.json';
 
 const Home: React.FC = () => {
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
               <p className="text-lg mb-8 text-blue-50 leading-relaxed">
                 {personal.bio}
               </p>
-              
+
               <div className="flex flex-wrap gap-4 mb-8">
                 <Link
                   to="/projects"
@@ -45,8 +45,9 @@ const Home: React.FC = () => {
 
               <div className="flex space-x-4">
                 {social.map((link, index) => {
-                  const IconComponent = link.icon === 'github' ? Github : 
-                                       link.icon === 'linkedin' ? Linkedin : Mail;
+                  const IconComponent = link.icon === 'github' ? Github :
+                    link.icon === 'linkedin' ? Linkedin :
+                      link.icon === 'globe' ? Globe : Mail;
                   return (
                     <a
                       key={index}
@@ -122,22 +123,26 @@ const Home: React.FC = () => {
                     ))}
                   </div>
                   <div className="flex space-x-4">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 dark:text-blue-400 hover:underline"
-                    >
-                      Live Demo
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 dark:text-gray-400 hover:underline"
-                    >
-                      GitHub
-                    </a>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 dark:text-blue-400 hover:underline"
+                      >
+                        Live Demo
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-600 dark:text-gray-400 hover:underline"
+                      >
+                        GitHub
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
